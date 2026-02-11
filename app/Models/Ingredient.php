@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Ingredient extends Model
+{
+    protected $table = 'ingredients';
+    protected $fillable = ['recette_id', 'nom_ingredient', 'quantite', 'unite'];
+    public function recette()
+    {
+        return $this->belongsTo(Recette::class);
+    }
+}
